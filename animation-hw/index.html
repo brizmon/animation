@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css" media="screen">
+		* {
+			margin: 0;
+		}
+		body {
+			background: radial-gradient(circle, #a0dfde 20%, #53c4f6 90%);
+		}
+		#background-image {
+			background-image: url('city.svg');
+		}
+		#container {
+			width: 100%;
+			overflow: hidden;
+			height: 10%;
+			position: relative;
+			bottom: -5em;
+		}
+		#container2 {
+			width: 100%;
+			position: relative;
+			
+		}
+		img {
+			max-width: 20%;
+		}
+		#redcar {
+			position: relative;
+			left: 0;
+		}
+		#bluecar {
+			position: relative;
+			left: -20px;
+		}
+		#yellowcar {
+			position: relative;
+			left: 10px;
+		}
+		#greencar {
+			position: relative;
+			left: 0;
+		}
+		#orangecar {
+			position: relative;
+			left: 0;
+		}
+		#redcrosscar {
+			position: relative;
+			left: 60px;
+		}
+		#cloud1, #cloud2, #cloud3 {
+			position: relative;
+			z-index: -1;
+		}
+		#cloud1 {
+			margin-left: 100px;
+			margin-right: 400px;
+		}
+		#cloud3 {
+			margin-left: 500px;
+		}
+		footer {
+			background-color: #536869;
+			width: 100%;
+			height: 90px;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<audio autoplay>
+	  <source src="sound.mp3" type="audio/mpeg">
+	</audio>
+	<div id="background-image">
+		<div id="clouds">
+			<img id="cloud1" src="cloud1.svg" alt="">
+			<img id="cloud2" src="cloud2.svg" alt="">
+			<img id="cloud3" src="cloud3.svg" alt="">
+		</div>
+		<div id="container">
+			<img id="redcar" src="red.svg" alt="">
+			<img id="bluecar" src="blue.svg" alt="">
+			<img id="yellowcar" src="yellow.svg" alt="">
+		</div>
+		<div id="container2">
+			<img id="greencar" src="green.svg" alt="">
+			<img id="orangecar" src="orange.svg" alt="">
+			<img id="redcrosscar" src="redcross.svg" alt="">
+		</div>
+	</div>
+	<footer></footer>
+
+
+
+
+<script type="text/javascript">
+	var redauto = document.getElementById('redcar');
+	var blueauto = document.getElementById('bluecar');
+	var yellowauto = document.getElementById('yellowcar');
+	var greenauto = document.getElementById('greencar');
+	var orangeauto = document.getElementById('orangecar');
+	var redcrossauto = document.getElementById('redcrosscar');
+	var cloud1 = document.getElementById('cloud1');
+	var cloud2 = document.getElementById('cloud2');
+	var cloud3 = document.getElementById('cloud3');
+	var currentPosred = 0;
+	var currentPosblue = 0;
+	var currentPosyellow = 0;
+	var currentPosgreen = 0;
+	var currentPosorange = 0;
+	var currentPosredcross = 0;
+	var currentPoscloud1 = 0;
+	var currentPoscloud2 = 0;
+	var currentPoscloud3 = 0;
+	var requestAnimationFrame = window.requestAnimationFrame;
+
+	function moveredcar() {
+		currentPosred += 4;
+		redauto.style.left = currentPosred + "px";
+		if (Math.abs(currentPosred) >= 1270) {
+			currentPosred = -300;
+		}
+		requestAnimationFrame(moveredcar);
+	}
+	moveredcar();
+
+	function movebluecar() {
+		currentPosblue += 7;
+		blueauto.style.left = currentPosblue + "px";
+		if (Math.abs(currentPosblue) >= 1270) {
+			currentPosblue = -500;
+		}
+		requestAnimationFrame(movebluecar);
+	}
+	movebluecar();
+
+	function moveyellowcar() {
+		currentPosyellow += 5;
+		yellowauto.style.left = currentPosyellow + "px";
+		if (Math.abs(currentPosyellow) >= 1270) {
+			currentPosyellow = -900;
+		}
+		requestAnimationFrame(moveyellowcar);
+	}
+	moveyellowcar();
+
+	function movegreencar() {
+		currentPosgreen += 8;
+		greenauto.style.left = currentPosgreen + "px";
+		if (Math.abs(currentPosgreen) >= 1270) {
+
+			currentPosgreen = -900;
+		}
+		requestAnimationFrame(movegreencar);
+	}
+	movegreencar();
+
+	function moveorangecar() {
+		currentPosorange += 4;
+		orangeauto.style.left = currentPosorange + "px";
+		if (Math.abs(currentPosorange) >= 1270) {
+			currentPosorange = -900;
+		}
+		requestAnimationFrame(moveorangecar);
+	}
+	moveorangecar();
+
+	function moveredcrosscar() {
+		currentPosredcross += 6;
+		redcrossauto.style.left = currentPosredcross + "px";
+		if (Math.abs(currentPosredcross) >= 1270) {
+			currentPosredcross = -900;
+		}
+		requestAnimationFrame(moveredcrosscar);
+	}
+	moveredcrosscar();
+
+	function movecloudone() {
+		currentPoscloud1 += 0.2;
+		cloud1.style.left = currentPoscloud1 + "px";
+		if (Math.abs(currentPoscloud1) >= 1270) {
+			currentPoscloud1 = -300;
+		}
+		requestAnimationFrame(movecloudone);
+	}
+	movecloudone();
+
+	function movecloudtwo() {
+		currentPoscloud2 += 0.2;
+		cloud2.style.left = currentPoscloud2 + "px";
+		if (Math.abs(currentPoscloud2) >= 1270) {
+			currentPoscloud2 = -300;
+		}
+		requestAnimationFrame(movecloudtwo);
+	}
+	movecloudtwo();
+
+	function movecloudthree() {
+		currentPoscloud3 += 0.2;
+		cloud3.style.left = currentPoscloud3 + "px";
+		if (Math.abs(currentPoscloud3) >= 1920) {
+			currentPoscloud3 = -300;
+		}
+		requestAnimationFrame(movecloudthree);
+	}
+	movecloudthree();
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
